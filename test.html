@@ -1,3 +1,42 @@
-<html>
-  testing
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8">
+    <title>Chrome Style Tabs (Pure CSS)</title>
+    
+    <!-- 引入外部 CSS 檔案 -->
+    <link rel="stylesheet" href="tabstyle.css">
+    
+</head>
+<body>
+
+    <!-- 控制器：使用相同的 name 屬性保證只能單選 -->
+    <input type="radio" name="tabs" id="tab1" checked>
+    <input type="radio" name="tabs" id="tab2">
+    <input type="radio" name="tabs" id="tab3">
+
+    <!-- 分頁標籤 -->
+    <div class="tabs-container">
+        <label for="tab1" class="tab-label">2024</label>
+        <label for="tab2" class="tab-label">2025</label>
+        <label for="tab3" class="tab-label">2026</label>
+    </div>
+
+    <!-- 分頁內容 -->
+    <div class="content-container">
+        <div class="tab-content content-1">
+            <h2>這是「新分頁」的內容</h2>
+            <p>這完全是用 CSS 的 <code>:checked</code> 偽類控制的。</p>
+        </div>
+        <div class="tab-content content-2">
+            <h2>這是「Google 搜尋」頁面</h2>
+            <p>不需要任何 JavaScript 就能切換內容。</p>
+        </div>
+        <div class="tab-content content-3">
+            <h2>這是「GitHub」內容區</h2>
+            <p>分頁標籤的重疊感是透過 <code>margin-right: -10px</code> 實現的。</p>
+        </div>
+    </div>
+
+</body>
 </html>
