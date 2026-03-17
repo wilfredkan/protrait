@@ -1,0 +1,81 @@
+	:root {
+            --bg-color: #dee1e6;       /* 分頁欄背景色 */
+            --tab-active-bg: #ffffff;  /* 選中分頁的顏色 */
+            --tab-hover-bg: #e8eaed;   /* 滑鼠懸停顏色 */
+            --tab-text: #3c4043;       /* 文字顏色 */
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f1f3f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 1. 隱藏實際的 Radio Buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* 2. 分頁欄容器 */
+        .tabs-container {
+            display: flex;
+            background-color: var(--bg-color);
+            padding: 8px 8px 0 8px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* 3. 分頁標籤樣式 */
+        .tab-label {
+            position: relative;
+            padding: 8px 30px;
+            background-color: transparent;
+            color: var(--tab-text);
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            margin-right: -10px; /* 負邊距製造重疊感 */
+            transition: background 0.2s;
+            z-index: 1;
+        }
+
+        /* 滑鼠經過效果 */
+        .tab-label:hover {
+            background-color: var(--tab-hover-bg);
+        }
+
+        /* 當對應的 radio 被選中時，標籤變色並浮在最前 */
+        #tab1:checked ~ .tabs-container label[for="tab1"],
+        #tab2:checked ~ .tabs-container label[for="tab2"],
+        #tab3:checked ~ .tabs-container label[for="tab3"] {
+            background-color: var(--tab-active-bg);
+            z-index: 2;
+        }
+
+        /* 4. 內容顯示區域 */
+        .content-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+
+        .tab-content {
+            display: none; /* 預設隱藏所有內容 */
+        }
+
+        /* 5. 切換內容的邏輯：利用 :checked 與 ~ 選擇器 */
+        #tab1:checked ~ .content-container .content-1,
+        #tab2:checked ~ .content-container .content-2,
+        #tab3:checked ~ .content-container .content-3 {
+            display: block;
+        }
+
+        /* 模擬 Chrome 關閉鈕 
+        .tab-label::after {
+            content: "×";
+            margin-left: 10px;
+            font-size: 14px;
+            opacity: 0.5; */
+        }
