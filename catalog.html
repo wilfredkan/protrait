@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的相簿目錄</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+
+        /* 相簿網格設定 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 核心：每一行3張 */
+            gap: 20px; /* 照片之間的間距 */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 單個相片項目 */
+        .item {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .item img {
+            width: 100%; /* 自動填滿寬度 */
+            height: 200px; /* 固定高度保持整齊 */
+            object-fit: cover; /* 裁切多餘部分，不變形 */
+            border-radius: 4px;
+        }
+
+        .item a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .item a:hover { text-decoration: underline; }
+
+        /* 手機版自動改為每一行 1 或 2 張 */
+        @media (max-width: 600px) {
+            .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>我的相簿</h1>
+
+    <div class="gallery">
+        <!-- 第一行 -->
+        <div class="item">
+            <img src="menu.jpg" alt="相片1">
+            <a href="https://example.com" target="_blank">查看詳細資料 1</a>
+        </div>
+        <div class="item">
+            <img src="menu.jpg" alt="相片2">
+            <a href="https://example.com" target="_blank">查看詳細資料 2</a>
+        </div>
+        <div class="item">
+            <img src="menu.jpg" alt="相片3">
+            <a href="https://example.com" target="_blank">查看詳細資料 3</a>
+        </div>
+
+        <!-- 第二行 -->
+        <div class="item">
+            <img src="menu.jpg" alt="相片4">
+            <a href="https://example.com" target="_blank">查看詳細資料 4</a>
+        </div>
+        <div class="item">
+            <img src="menu.jpg" alt="相片5">
+            <a href="https://example.com" target="_blank">查看詳細資料 5</a>
+        </div>
+        <div class="item">
+            <img src="menu.jpg" alt="相片6">
+            <a href="https://example.com" target="_blank">查看詳細資料 6</a>
+        </div>
+    </div>
+
+</body>
+</html>
