@@ -53,7 +53,7 @@
         }
 
         /* 4. 內容顯示區域 */
-        .gallery-container {
+        .content-container {
             background-color: #FFFFFF;
             padding: 40px;
             border-radius: 0 0 8px 8px;
@@ -76,9 +76,9 @@
 		}
 
         /* 5. 切換內容的邏輯：利用 :checked 與 ~ 選擇器 */
-        #tab1:checked ~ .gallery-container .content-1,
-        #tab2:checked ~ .gallery-container .content-2,
-        #tab3:checked ~ .gallery-container .content-3 {
+        #tab1:checked ~ .content-container .content-1,
+        #tab2:checked ~ .content-container .content-2,
+        #tab3:checked ~ .content-container .content-3 {
             display: block;
         }
 
