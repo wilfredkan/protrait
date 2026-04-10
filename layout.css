@@ -22,7 +22,7 @@ input[type="radio"] {
 .tabs-container {
     display: flex;
     background-color: var(--bg-color);
-    padding: 8px 8px 8px 8px; /*8px 8px 0 8px*/
+    padding: 8px 8px 0 8px
     border-radius: 8px 8px 0 0;
     max-width: 3840px; /* 1000px與相簿最大寬度一致 */
     margin: 0 auto;
