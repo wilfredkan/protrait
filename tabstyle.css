@@ -1,5 +1,5 @@
 	:root {
-            --bg-color: black;       /* 分頁欄背景色#dee1e6 */
+            --bg-color: #000000;       /* 分頁欄背景色#dee1e6 */
             --tab-active-bg: #ffffff;  /* 選中分頁的顏色 */
             --tab-hover-bg: #e8eaed;   /* 滑鼠懸停顏色 */
             --tab-text: black;       /* 文字顏色#3c4043 */
