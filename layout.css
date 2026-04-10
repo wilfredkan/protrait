@@ -1,0 +1,102 @@
+:root {
+    --bg-color: #000000;       /* 分頁欄背景色 */
+    --tab-active-bg: #ffffff;  /* 選中分頁的顏色 */
+    --tab-hover-bg: grey;      /* 滑鼠懸停顏色 */
+    --tab-text: white;         /* 未選中時文字改為白色(因為背景是黑的) */
+    --tab-active-text: black;  /* 選中時文字變回黑色 */
+}
+
+body {
+    font-family: Arial;
+    background-color: #f4f4f4; /* 稍微深一點點，突顯白色內容區 */
+    margin: 0;
+    padding: 20px;
+}
+
+/* 1. 隱藏 Radio Buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* 2. 分頁欄容器 */
+.tabs-container {
+    display: flex;
+    background-color: var(--bg-color);
+    padding: 8px 8px 0 8px;
+    border-radius: 8px 8px 0 0;
+    max-width: 1000px; /* 與相簿最大寬度一致 */
+    margin: 0 auto;
+}
+
+/* 3. 分頁標籤樣式 */
+.tab-label {
+    position: relative;
+    padding: 8px 30px;
+    background-color: transparent;
+    color: var(--tab-text);
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    margin-right: -10px;
+    transition: background 0.2s;
+    z-index: 1;
+}
+
+.tab-label:hover {
+    background-color: var(--tab-hover-bg);
+}
+
+/* 當 Radio 被選中時，標籤變白、文字變黑 */
+#tab1:checked ~ .tabs-container label[for="tab1"],
+#tab2:checked ~ .tabs-container label[for="tab2"],
+#tab3:checked ~ .tabs-container label[for="tab3"] {
+    background-color: var(--tab-active-bg);
+    color: var(--tab-active-text);
+    z-index: 2;
+}
+
+/* 4. 內容顯示區域 (現在只有一個容器) */
+.content-container {
+    background-color: #FFFFFF;
+    padding: 20px; /* 稍微減少 padding 讓相簿空間更大 */
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    min-height: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 5. 相簿網格樣式 (整合原本的相簿 CSS) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    background: white;
+    padding: 10px;
+    border: 1px solid #eee; /* 加個淡邊框 */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 手機版適應 */
+@media (max-width: 600px) {
+    .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
