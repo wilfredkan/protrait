@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+<head>
+    <meta charset="UTF-8">
+    <title>Chrome Style Tabs (Pure CSS)</title>
+    
+    <!-- 引入外部 CSS 檔案 -->
+    <link rel="stylesheet" href="tabstyle.css">
+    
+</head>
+<script>
+  let allData = []; // 用來存儲從 JSON 讀取的原始資料
+
+// 1. 初始化：載入 JSON 資料
+  async function initGallery() {
+    try {
+        const response = await fetch('data.json');
+        allData = await response.json();
+        filterYear('2024'); // 預設顯示 2024
+    } catch (error) {
+        console.error("載入 JSON 失敗:", error);
+    }
+  }
+
+  // 2. 篩選年份並更新畫面
+  function filterYear(year) {
+    const container = document.getElementById('gallery-container');
+    
+    // 篩選出檔名前4碼符合該年份的資料
+    const filtered = allData.filter(item => item.src.startsWith(year));
+
+    // 生成 HTML (沿用你原本的相簿樣式)
+    container.innerHTML = filtered.map(item => `
+        <div class="item">
+            <img src="${item.src}" alt="${item.alt}">
+            <a href="${item.url}" target="_blank">${item.alt}</a>
+        </div>
+    `).join('');
+  }
+
+  // 啟動程式
+  initGallery();
+
+</script>
+<body>
+
+    <!-- 控制器：使用相同的 name 屬性保證只能單選 -->
+    <input type="radio" name="tabs" id="tab1" checked onclick="filterYear('2024')">
+    <input type="radio" name="tabs" id="tab2" onclick="filterYear('2025')">
+    <input type="radio" name="tabs" id="tab3" onclick="filterYear('2026')">
+
+    <!-- 分頁標籤 -->
+    <div class="tabs-container">
+        <label for="tab1" class="tab-label">2024</label>
+        <label for="tab2" class="tab-label">2025</label>
+        <label for="tab3" class="tab-label">2026</label>
+    </div>
+
+    <!-- 唯一的相簿容器 (取代原本的 content-container) -->
+    <div class="gallery" id="gallery-container">
+      <!-- 這裡由 JavaScript 動態填入 -->
+    </div>
+
+</body>
+</html>
