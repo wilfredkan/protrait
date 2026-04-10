@@ -54,7 +54,7 @@
 
         /* 4. 內容顯示區域 */
         .content-container {
-            background-color: #fff;
+            background-color: #000000;
             padding: 40px;
             border-radius: 0 0 8px 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
