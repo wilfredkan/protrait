@@ -16,7 +16,7 @@
     try {
         const response = await fetch('data.json');
         allData = await response.json();
-        filterYear('2024'); // 預設顯示 2024
+        filterYear('2026'); // 預設顯示 2024
     } catch (error) {
         console.error("載入 JSON 失敗:", error);
     }
