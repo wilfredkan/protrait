@@ -2,7 +2,7 @@
             --bg-color: #dee1e6;       /* 分頁欄背景色 */
             --tab-active-bg: #ffffff;  /* 選中分頁的顏色 */
             --tab-hover-bg: #e8eaed;   /* 滑鼠懸停顏色 */
-            --tab-text: #ffffff;       /* 文字顏色 */
+            --tab-text: #3c4043;       /* 文字顏色 */
         }
 
         body {
