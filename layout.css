@@ -96,6 +96,13 @@ input[type="radio"] {
     font-size: 14px;
 }
 
+.title-text {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
 /* 手機版適應 */
 @media (max-width: 600px) {
     .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
