@@ -27,7 +27,7 @@
     const container = document.getElementById('gallery-container');
     
     // 篩選出檔名前4碼符合該年份的資料
-    const filtered = allData.filter(item => item.src.startsWith(year));
+    const filtered = allData.filter(item => item.src.includes(year)); /*startsWith()*/
 
     // 生成 HTML (沿用你原本的相簿樣式)
     container.innerHTML = filtered.map(item => `
