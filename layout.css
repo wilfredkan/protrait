@@ -34,7 +34,7 @@ input[type="radio"] {
     padding: 8px 30px;
     background-color: transparent;
     color: var(--tab-text);
-    font-size: 13px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 8px 8px 0 0;
     margin-right: -10px;
@@ -94,7 +94,7 @@ input[type="radio"] {
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .title-text {
