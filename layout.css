@@ -24,7 +24,7 @@ input[type="radio"] {
     background-color: var(--bg-color);
     padding: 8px 8px 0 8px;
     border-radius: 8px 8px 0 0;
-    max-width: 3840px; /* 1000px與相簿最大寬度一致 */
+    max-width: 1000px; /* 1000px與相簿最大寬度一致 */
     margin: 0 auto;
 }
 
@@ -63,7 +63,7 @@ input[type="radio"] {
     border-radius: 0 0 8px 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     min-height: 600px;
-    max-width: 3840px; #1000px
+    max-width: 1000px; #1000px
     margin: 0 auto;
 }
 
