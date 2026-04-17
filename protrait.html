@@ -13,11 +13,14 @@
 
 // 1. 初始化：載入 JSON 資料
   async function initGallery() {
+    const container = document.getElementById('gallery-container');
     try {
+        container.innerHTML = '<div class="loading">載入相簿中，請稍候...</div>';
         const response = await fetch('data.json');
         allData = await response.json();
         filterYear('2026'); // 預設顯示 2024
     } catch (error) {
+        container.innerHTML = `<div class="error">抱歉，暫時未能載入相片，請重新載入... (${error.message})</div>`;
         console.error("載入 JSON 失敗:", error);
     }
   }
