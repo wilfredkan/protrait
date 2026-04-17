@@ -105,15 +105,6 @@ input[type="radio"] {
   text-align: center;
 }
 
-/* 載入中同埋錯誤訊息嘅樣式 */
-.loading, .error { 
-    grid-column: 1 / -1; /* 橫跨成行 */
-    text-align: center;
-    padding: 50px;
-    font-size: 14px; /* 1.2rem */
-    color: black; /* #666 */
-}
-
 /* 手機版適應 */
 @media (max-width: 600px) {
     .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
