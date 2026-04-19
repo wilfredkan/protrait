@@ -81,6 +81,10 @@ input[type="radio"] {
     border: 1px solid #eee; /* 加個淡邊框 */
     border-radius: 8px;
     text-align: center;
+    /* 固定寬度，與 grid-template-columns 一致 */
+    width: 300px; 
+    /* 避免 padding 撐開寬度 */
+    box-sizing: border-box;
 }
 
 .item img {
