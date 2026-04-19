@@ -90,9 +90,11 @@ input[type="radio"] {
     /* max-width: 100%; 關鍵：確保不超出父層 */
     /*height: 200px; */
     /* 1. 設定固定的寬高比，例如 4:3 (橫向) 或 1:1 (正方形) */
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 4px;
+    /* 關鍵屬性：對齊頂部 */
+    object-position: top;
 }
 
 .item a {
