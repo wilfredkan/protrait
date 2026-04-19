@@ -83,8 +83,6 @@ input[type="radio"] {
     text-align: center;
     /* 固定寬度，與 grid-template-columns 一致 */
     width: 300px; 
-    /* 避免 padding 撐開寬度 */
-    box-sizing: border-box;
 }
 
 .item img {
