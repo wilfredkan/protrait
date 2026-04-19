@@ -81,6 +81,8 @@ input[type="radio"] {
     border: 1px solid #eee; /* 加個淡邊框 */
     border-radius: 8px;
     text-align: center;
+    /* 關鍵：隱藏超出範圍的內容 */
+    overflow: hidden;
 }
 
 .item img {
