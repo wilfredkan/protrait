@@ -70,7 +70,7 @@ input[type="radio"] {
 /* 5. 相簿網格樣式 (整合原本的相簿 CSS) */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); #1fr
+    grid-template-columns: repeat(3, 1fr); #minmax(0, 1fr)
     gap: 20px;
     width: 100%; /* 確保網格佔滿 100% */
 }
